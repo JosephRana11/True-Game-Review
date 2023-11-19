@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title%}
+TrueReview | Home
+{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'style.css'%}">
+<main>
+  <div class="main_body">
+    <div class="mp">
+      <h1>Most Popular</h1>
+      <ul class="mp_games">
+        <a href="game.html"><li><img src="images/starfield.jpg"></li></a>
+        <a href="game.html"><li><img src="images/liesofp.jpg"></li></a>
+        <a href="game.html"><li><img src="images/mk1.jpg"></li></a>
+        <a href="game.html"><li><img src="images/payday3.jpg"></li></a>
+      </ul>
+    </div>
+
+    <div class="ff">
+      <h1>Fan Favorites</h1>
+      <ul class="ff_games">
+        <a href="game.html"><li><img src="images/starfield.jpg"></li></a>
+        <a href="game.html"><li><img src="images/zelda.jpg"></li></a>
+        <a href="game.html"><li><img src="images/eldenring.jpg"></li></a>
+        <a href="game.html"><li><img src="images/fc24.jpg"></li></a>
+      </ul>
+    </div>
+
+    <div class="cp">
+      <h1>Critics Picks</h1>
+      <ul class="cp_games">
+        <a href="game.html"><li><img src="images/starfield.jpg"></li></a>
+        <a href="game.html"><li><img src="images/mk1.jpg"></li></a>
+        <a href="game.html"><li><img src="images/liesofp.jpg"></li></a>
+        <a href="game.html"><li><img src="images/zelda.jpg"></li></a>
+      </ul>
+    </div>
+  </div>
+</main>
+{% endblock %}

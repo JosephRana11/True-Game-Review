@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+<div class="login_holder">
+  <h1 id="login_header">Login</h1>
+  <div id="login_error_msg_holder">
+    <p id="login_error_msg">Invalid username <span id="error_msg_second_line">and/or password</span></p>
+  </div>
+  <form id="login_form" method="post" action="{% url 'login' %}">{% csrf_token %}
+    <input type="text" name="username" id="username_field" class="login_form_field" placeholder="Username">
+    <input type="text" name="password" id="password_field" class="login_form_field" placeholder="Password">
+    <input type="submit" value="Login" id="login_form_submit">
+  </form>
+</div>
+{% endblock %}
