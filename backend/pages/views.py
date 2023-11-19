@@ -1,5 +1,6 @@
 from django.shortcuts import render , redirect
 from django.contrib.auth import authenticate , login , logout
+from .forms import UserRegisterForm
 
 # Create your views here.
 def home_view(request):
@@ -19,4 +20,22 @@ def login_view(request):
       print('user logged in')
       return redirect('home')
     return redirect('home')
-  return render(request , 'login.html')
+  else:
+    return render(request , 'login.html')
+
+
+def logout_view(request):
+  logout(request)
+  return redirect('home')
+
+
+def register_view(request):
+  if request.method == 'POST':
+    form = UserRegisterForm(request.POST)
+    print(form)
+    if form.is_valid():
+      form.save()
+      return redirect('home')
+    else:
+      return redirect('register')
+  return render(request , 'register.html')

@@ -3,7 +3,7 @@
 {% endblock %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'login.css'%}">
+<link rel="stylesheet" href="{% static 'register.css'%}">
 <!doctype html>
 <html lang="en"> 
 
@@ -25,29 +25,39 @@
 
     <div class="content"> 
 
-     <h2>Sign In</h2> 
+     <h2>Register your Account</h2> 
 
-     <form class="form" method="post" action="{% url 'login' %}"> {% csrf_token %}
+     <form class="form" method="post" action="{% url 'register' %}">{% csrf_token %}
 
       <div class="inputBox"> 
 
        <input type="text" required name="username"> <i>Username</i> 
 
       </div> 
-
       <div class="inputBox"> 
 
-       <input type="password" required name="password"> <i>Password</i> 
+        <input type="email" required name="email"> <i>Email address</i> 
+ 
+       </div> 
+      <div class="inputBox"> 
+
+       <input type="password" required name="password1"> <i>Password</i> 
+
+      </div> 
+      
+      
+      <div class="inputBox"> 
+        <input type="password" required name="password2"> <i>Confirm Password</i> 
+
+       </div> 
+
+      <div class="links"> <a href="#">Have an Account ? </a> <a href="{% url 'login'%}">Login</a> 
 
       </div> 
 
-      <div class="links"> <a href="#">Don't Have an Account?</a> <a href="{% url 'register'%}">Signup</a> 
-
-      </div> 
-
       <div class="inputBox"> 
 
-       <input type="submit" value="Login"> 
+       <input type="submit" value="Signup"> 
 
       </div> 
 
